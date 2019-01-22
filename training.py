@@ -4,7 +4,7 @@ import numpy as np
 
 labelsName= {"ham":0,"spam":1}
 
-df = pd.read_csv('spam.csv', encoding='latin-1')
+df = pd.read_csv('./data/spam.csv', encoding='latin-1')
 df = df.drop(['Unnamed: 2','Unnamed: 3','Unnamed: 4'],axis=1)
 
 df = df.replace(['ham','spam'],[labelsName["ham"], labelsName["spam"]])

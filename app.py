@@ -126,20 +126,14 @@ def predict(document):
 
     result = model.predict(numericData)
 
-    return result;
-
-def predict_proba(document):
-    vectorizer = pickle.load(open(filenameCV, 'rb'))
-    document = preparText(document)
-    numericData = vectorizer.transform([document]).toarray()
-    #print(numericData)
-
-    #if model == "null":
-    model = pickle.load(open(filename, 'rb'))
-
-    result = model.predict_proba(numericData)
-    print(model.classess_)
-    return result;
+    return getLabel(result[0]);
 
 
 
+
+
+def getLabel(i):
+    if i == 0:
+        return "ham"
+    else:
+        return "spam"
