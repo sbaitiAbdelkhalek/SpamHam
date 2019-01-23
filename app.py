@@ -1,7 +1,9 @@
-import pandas as pd
-import numpy as np
+"""
+@Author: SBAITI Abdelkhalek <abdelkhalek.sbaiti@gmail.com>
+"""
+
+
 import nltk
-from numpy.distutils.system_info import numarray_info
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
@@ -119,7 +121,6 @@ def predict(document):
     vectorizer = pickle.load(open(filenameCV, 'rb'))
     document = preparText(document)
     numericData = vectorizer.transform([document]).toarray()
-    print(numericData)
 
     #if model == "null":
     model = pickle.load(open(filename, 'rb'))
